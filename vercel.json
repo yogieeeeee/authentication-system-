@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "public/**/*",       // File static
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/index.js",      // Serverless function untuk Express
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",         // Semua request ke /api/* 
+      "dest": "api/index.js"      // Arahkan ke Express
+    },
+    {
+      "src": "/(.*)",             // File static
+      "dest": "public/$1"
+    }
+  ]
+}

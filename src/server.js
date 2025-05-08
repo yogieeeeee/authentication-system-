@@ -1,8 +1,8 @@
 import express from "express"
 import cors from "cors"
-import connectDB from "./config/db/db.js"
-import userRoute from "./src/routers/auth.route.js"
-import userDashboard from "./src/routers/dashboard.route.js"
+import connectDB from "../config/db/db.js"
+import userRoute from "./routers/auth.route.js"
+import userDashboard from "./routers/dashboard.route.js"
 const app = express()
 const port = 3000
 
@@ -26,3 +26,5 @@ const start = async () => {
 
 start()
 // Routers
+
+export default app
